@@ -1,10 +1,6 @@
-// #import "PARSPersonalSetViewController.h"
-#import "pareplacestepnumber.h"
-// #import "PARSBaseViewController.h"
 #import <UIKit/UIViewController.h>
-// #import "UIKit/UIViewController.h"
-
-// #import <UIKit/UIKit.h>
+#import "PAReplaceRunData.h"
+// #import "KKReplaceRunDataViewController.h"
 
 // %hook PARSHealthWalkingTrackInfo
 //
@@ -157,24 +153,22 @@
 
 %new
 - (void)runSettingAction{
-    UIViewController *vc = [UIViewController new];
-    vc.title = @"平安Run数据设置";
-    vc.view.backgroundColor = [UIColor redColor];
+    KKReplaceRunDataViewController *vc = [[KKReplaceRunDataViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
     // [self presentViewController:vc animated:YES completion:nil];
 }
 %end
 
 %hook PARSPedometerInfo
-- (long long)iPhoneSteps{
-  return 12024;
-}
+// - (long long)iPhoneSteps{
+//   return 14664;
+// }
 
 - (long long)integratedSteps{
-  return 12025;
+  return 14664;
 }
 
 - (long long)heartRate{
-  return 125;
+  return 110;
 }
 %end

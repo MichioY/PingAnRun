@@ -9,20 +9,11 @@
 /* Begin PBXBuildFile section */
 		3D5B66051F317F3100DE2DBA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5B66041F317F3100DE2DBA /* main.m */; };
 		3D5B66081F317F3100DE2DBA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5B66071F317F3100DE2DBA /* AppDelegate.m */; };
-		3D5B660B1F317F3100DE2DBA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5B660A1F317F3100DE2DBA /* ViewController.m */; };
+		3D5B660B1F317F3100DE2DBA /* KKReplaceRunDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5B660A1F317F3100DE2DBA /* KKReplaceRunDataViewController.m */; };
 		3D5B660E1F317F3100DE2DBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D5B660C1F317F3100DE2DBA /* Main.storyboard */; };
 		3D5B66101F317F3100DE2DBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D5B660F1F317F3100DE2DBA /* Assets.xcassets */; };
 		3D5B66131F317F3100DE2DBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D5B66111F317F3100DE2DBA /* LaunchScreen.storyboard */; };
 		3D5B662D1F317F3E00DE2DBA /* Tweak.xm in Resources */ = {isa = PBXBuildFile; fileRef = 3D5B661B1F317F3E00DE2DBA /* Tweak.xm */; };
-		3D5B662E1F317F3E00DE2DBA /* WBBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5B661D1F317F3E00DE2DBA /* WBBaseViewController.m */; };
-		3D5B662F1F317F3E00DE2DBA /* WBMultiSelectGroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5B661F1F317F3E00DE2DBA /* WBMultiSelectGroupsViewController.m */; };
-		3D5B66301F317F3E00DE2DBA /* WBReceiveRedEnvelopOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5B66211F317F3E00DE2DBA /* WBReceiveRedEnvelopOperation.m */; };
-		3D5B66311F317F3E00DE2DBA /* WBRedEnvelopConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5B66231F317F3E00DE2DBA /* WBRedEnvelopConfig.m */; };
-		3D5B66321F317F3E00DE2DBA /* WBRedEnvelopParamQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5B66251F317F3E00DE2DBA /* WBRedEnvelopParamQueue.m */; };
-		3D5B66331F317F3E00DE2DBA /* WBRedEnvelopTaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5B66271F317F3E00DE2DBA /* WBRedEnvelopTaskManager.m */; };
-		3D5B66341F317F3E00DE2DBA /* WBSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5B66291F317F3E00DE2DBA /* WBSettingViewController.m */; };
-		3D5B66351F317F3E00DE2DBA /* WeChatRedEnvelopParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5B662C1F317F3E00DE2DBA /* WeChatRedEnvelopParam.m */; };
-		3DDD95DB1F31E2C000031C7C /* PARSPersonalSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD95DA1F31E2C000031C7C /* PARSPersonalSetViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +21,8 @@
 		3D5B66041F317F3100DE2DBA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3D5B66061F317F3100DE2DBA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3D5B66071F317F3100DE2DBA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3D5B66091F317F3100DE2DBA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3D5B660A1F317F3100DE2DBA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3D5B66091F317F3100DE2DBA /* KKReplaceRunDataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKReplaceRunDataViewController.h; sourceTree = "<group>"; };
+		3D5B660A1F317F3100DE2DBA /* KKReplaceRunDataViewController.m */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.c.objc; path = KKReplaceRunDataViewController.m; sourceTree = "<group>"; tabWidth = 4; };
 		3D5B660D1F317F3100DE2DBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D5B660F1F317F3100DE2DBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D5B66121F317F3100DE2DBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -91,8 +82,8 @@
 				3D5B661A1F317F3E00DE2DBA /* src */,
 				3D5B66061F317F3100DE2DBA /* AppDelegate.h */,
 				3D5B66071F317F3100DE2DBA /* AppDelegate.m */,
-				3D5B66091F317F3100DE2DBA /* ViewController.h */,
-				3D5B660A1F317F3100DE2DBA /* ViewController.m */,
+				3D5B66091F317F3100DE2DBA /* KKReplaceRunDataViewController.h */,
+				3D5B660A1F317F3100DE2DBA /* KKReplaceRunDataViewController.m */,
 				3D5B660C1F317F3100DE2DBA /* Main.storyboard */,
 				3D5B660F1F317F3100DE2DBA /* Assets.xcassets */,
 				3D5B66111F317F3100DE2DBA /* LaunchScreen.storyboard */,
@@ -210,17 +201,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D5B662E1F317F3E00DE2DBA /* WBBaseViewController.m in Sources */,
-				3D5B660B1F317F3100DE2DBA /* ViewController.m in Sources */,
-				3D5B66311F317F3E00DE2DBA /* WBRedEnvelopConfig.m in Sources */,
-				3D5B66351F317F3E00DE2DBA /* WeChatRedEnvelopParam.m in Sources */,
-				3D5B662F1F317F3E00DE2DBA /* WBMultiSelectGroupsViewController.m in Sources */,
+				3D5B660B1F317F3100DE2DBA /* KKReplaceRunDataViewController.m in Sources */,
 				3D5B66081F317F3100DE2DBA /* AppDelegate.m in Sources */,
-				3D5B66331F317F3E00DE2DBA /* WBRedEnvelopTaskManager.m in Sources */,
-				3DDD95DB1F31E2C000031C7C /* PARSPersonalSetViewController.m in Sources */,
-				3D5B66341F317F3E00DE2DBA /* WBSettingViewController.m in Sources */,
-				3D5B66301F317F3E00DE2DBA /* WBReceiveRedEnvelopOperation.m in Sources */,
-				3D5B66321F317F3E00DE2DBA /* WBRedEnvelopParamQueue.m in Sources */,
 				3D5B66051F317F3100DE2DBA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

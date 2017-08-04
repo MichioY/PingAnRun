@@ -1,6 +1,6 @@
 //
-//  ViewController.m
-//  WeChatEnvTestViewController
+//  KKReplaceRunDataViewController.m
+//  KKReplaceRunDataViewController
 //
 //  Created by SuperDry on 02/08/2017.
 //  Copyright © 2017 Test. All rights reserved.
@@ -29,7 +29,7 @@ static const NSInteger rowHeight = 60;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    self.title = @"平安Run数据设置";
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     [self.view addSubview:self.tableView];
     
@@ -172,7 +172,7 @@ static const NSInteger rowHeight = 60;
 #pragma mark Lazy
 - (UITableView *)tableView{
     if (!_tableView) {
-        UITableView * tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStyleGrouped];
+        UITableView * tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStyleGrouped];
         [self.view insertSubview:tableView atIndex:0];
         tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         tableView.dataSource = self;
