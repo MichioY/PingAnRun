@@ -1,0 +1,9 @@
+Package: com.pingan.pars
+Name: PingAnRun
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome MobileSubstrate tweak!
+Maintainer: SuperDry
+Author: SuperDry
+Section: Tweaks
