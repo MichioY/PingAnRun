@@ -7,6 +7,13 @@
 //
 
 #import "KKReplaceRunDataViewController.h"
+#import "KKPARunConfig.h"
+#import "PARSCircleWalkRankViewController.h"
+
+#define kMaxSteps 50000
+#define kMinSteps 0
+#define kMaxHeartRates 150
+#define kMinHeartRates 60
 
 typedef enum : NSUInteger {
     ModifyRunTypeSteps,
@@ -82,15 +89,18 @@ static const NSInteger rowHeight = 60;
     switch (indexPath.row) {
         case 0:
             
-            [self setupAlertVCWithTitle:replaceStepsTitle message:@"请输入您要修改的步数" type:ModifyRunTypeSteps handler:^{
-                #warning 需要处理
+
+            [self setupAlertVCWithTitle:replaceStepsTitle message:@"请输入您要修改的步数" type:ModifyRunTypeSteps handler:^(UITextField * _Nonnull textField){
+
+                [KKPARunConfig sharedConfig].steps = textField.text.integerValue;
             }];
             break;
             
         default:
             
-            [self setupAlertVCWithTitle:replaceStepsTitle message:@"请输入您要修改的心率" type:ModifyRunTypeHeartRates handler:^{
-                #warning 需要处理
+            [self setupAlertVCWithTitle:replaceStepsTitle message:@"请输入您要修改的心率" type:ModifyRunTypeHeartRates handler:^(UITextField * _Nonnull textField){
+
+                [KKPARunConfig sharedConfig].heartRate = textField.text.integerValue;
             }];
 
             break;
@@ -98,7 +108,7 @@ static const NSInteger rowHeight = 60;
     
 }
 
-- (void)setupAlertVCWithTitle:(NSString *)title message:(NSString *)message type:(ModifyRunType)type handler:(void (^)())handler{
+- (void)setupAlertVCWithTitle:(NSString *)title message:(NSString *)message type:(ModifyRunType)type handler:(void (^)(UITextField * _Nonnull textField))handler{
     
     UIAlertController *alertVC =  [UIAlertController alertControllerWithTitle:title message:message
                                                                preferredStyle:UIAlertControllerStyleAlert];
@@ -109,16 +119,28 @@ static const NSInteger rowHeight = 60;
     [alertVC addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleTextFieldTextDidChangeNotification:) name:UITextFieldTextDidEndEditingNotification object:textField];
-
     }];
     
-    [alertVC addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
-    [alertVC addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:handler]];
     
+    [alertVC addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    
+    [alertVC addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        handler((UITextField *)alertVC.textFields.firstObject);
+    }]];
+    
+    [alertVC addAction:[UIAlertAction actionWithTitle:@"去平安Run上传" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        PARSCircleWalkRankViewController *vc = [PARSCircleWalkRankViewController new];
+        
+        [self.navigationController pushViewController:vc animated:YES];
+    }]];
+
     [self presentViewController:alertVC animated:YES completion:nil];
 }
 
 - (void)handleTextFieldTextDidChangeNotification:(NSNotification *)notification {
+    
     UITextField *textField = notification.object;
     // Enforce a minimum length of >= 5 characters for secure text alerts.
 
@@ -129,12 +151,28 @@ static const NSInteger rowHeight = 60;
     }
     
     
-    if (textField.text.integerValue < 0 || textField.text.integerValue > 30000) {
+    if (self.runType == ModifyRunTypeSteps) {
         
-        [self showNumberWarningAlertVCWithMessage:@"请输入0~30000之间的数字"];
-
-        return;
+        if (textField.text.integerValue < kMinSteps || textField.text.integerValue > kMaxSteps) {
+            
+            NSString *stepString = [NSString stringWithFormat:@"请输入%d~%d之间的步数", kMinSteps, kMaxSteps];
+            
+            [self showNumberWarningAlertVCWithMessage:stepString];
+            
+            return;
+        }
+    }else{
+        
+        if (textField.text.integerValue < kMinHeartRates || textField.text.integerValue > kMaxHeartRates) {
+            
+            NSString *stepString = [NSString stringWithFormat:@"请输入%d~%d之间的心率", kMinHeartRates, kMaxHeartRates];
+            
+            [self showNumberWarningAlertVCWithMessage:stepString];
+            
+            return;
+        }
     }
+
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.runType inSection:0];
     if (self.runType == ModifyRunTypeSteps) {
@@ -153,7 +191,7 @@ static const NSInteger rowHeight = 60;
         
 - (void)showNumberWarningAlertVCWithMessage:(NSString *)message{
  
-    UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"小Tips" message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"修改失败!" message:message preferredStyle:UIAlertControllerStyleAlert];
     [vc addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
     [self presentViewController:vc animated:YES completion:nil];
 }
@@ -189,14 +227,15 @@ static const NSInteger rowHeight = 60;
 
 - (NSString *)totalSteps{
     if (!_totalSteps) {
-        _totalSteps = @"0";
+        
+        _totalSteps = [NSString stringWithFormat:@"%ld",(long)[KKPARunConfig sharedConfig].steps];
     }
     return _totalSteps;
 }
 
 - (NSString *)totalHeartRates{
     if (!_totalHeartRates) {
-        _totalHeartRates = @"0";
+        _totalHeartRates = [NSString stringWithFormat:@"%ld",(long)[KKPARunConfig sharedConfig].heartRate];
     }
     return _totalHeartRates;
 }

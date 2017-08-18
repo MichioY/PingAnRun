@@ -14,9 +14,11 @@
 		3D5B66101F317F3100DE2DBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D5B660F1F317F3100DE2DBA /* Assets.xcassets */; };
 		3D5B66131F317F3100DE2DBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D5B66111F317F3100DE2DBA /* LaunchScreen.storyboard */; };
 		3D5B662D1F317F3E00DE2DBA /* Tweak.xm in Resources */ = {isa = PBXBuildFile; fileRef = 3D5B661B1F317F3E00DE2DBA /* Tweak.xm */; };
+		3DFDC0D51F39C084006F0BCC /* KKPARunConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFDC0D41F39C084006F0BCC /* KKPARunConfig.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D37DFE81F3AAEC40080CB71 /* PARSCircleWalkRankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARSCircleWalkRankViewController.h; sourceTree = "<group>"; };
 		3D5B66001F317F3100DE2DBA /* WeChatEnvTestViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeChatEnvTestViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D5B66041F317F3100DE2DBA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3D5B66061F317F3100DE2DBA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -47,6 +49,8 @@
 		3D5B662C1F317F3E00DE2DBA /* WeChatRedEnvelopParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeChatRedEnvelopParam.m; sourceTree = "<group>"; };
 		3DDD95D91F31E2C000031C7C /* PARSPersonalSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARSPersonalSetViewController.h; sourceTree = "<group>"; };
 		3DDD95DA1F31E2C000031C7C /* PARSPersonalSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARSPersonalSetViewController.m; sourceTree = "<group>"; };
+		3DFDC0D31F39C084006F0BCC /* KKPARunConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKPARunConfig.h; sourceTree = "<group>"; };
+		3DFDC0D41F39C084006F0BCC /* KKPARunConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKPARunConfig.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +86,11 @@
 				3D5B661A1F317F3E00DE2DBA /* src */,
 				3D5B66061F317F3100DE2DBA /* AppDelegate.h */,
 				3D5B66071F317F3100DE2DBA /* AppDelegate.m */,
+				3D37DFE81F3AAEC40080CB71 /* PARSCircleWalkRankViewController.h */,
 				3D5B66091F317F3100DE2DBA /* KKReplaceRunDataViewController.h */,
 				3D5B660A1F317F3100DE2DBA /* KKReplaceRunDataViewController.m */,
+				3DFDC0D31F39C084006F0BCC /* KKPARunConfig.h */,
+				3DFDC0D41F39C084006F0BCC /* KKPARunConfig.m */,
 				3D5B660C1F317F3100DE2DBA /* Main.storyboard */,
 				3D5B660F1F317F3100DE2DBA /* Assets.xcassets */,
 				3D5B66111F317F3100DE2DBA /* LaunchScreen.storyboard */,
@@ -159,7 +166,7 @@
 				TargetAttributes = {
 					3D5B65FF1F317F3100DE2DBA = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = Y6E87B57HA;
+						DevelopmentTeam = KB24KHX8D8;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -201,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DFDC0D51F39C084006F0BCC /* KKPARunConfig.m in Sources */,
 				3D5B660B1F317F3100DE2DBA /* KKReplaceRunDataViewController.m in Sources */,
 				3D5B66081F317F3100DE2DBA /* AppDelegate.m in Sources */,
 				3D5B66051F317F3100DE2DBA /* main.m in Sources */,
@@ -323,10 +331,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Y6E87B57HA;
+				DEVELOPMENT_TEAM = KB24KHX8D8;
 				INFOPLIST_FILE = WeChatEnvTestViewController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Test.WeChatEnvTestViewController;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HommieTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -335,10 +343,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Y6E87B57HA;
+				DEVELOPMENT_TEAM = KB24KHX8D8;
 				INFOPLIST_FILE = WeChatEnvTestViewController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Test.WeChatEnvTestViewController;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HommieTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

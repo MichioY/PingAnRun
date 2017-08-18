@@ -10,4 +10,9 @@
 
 @interface KKPARunConfig : NSObject
 
++ (instancetype)sharedConfig;
+
+@property (nonatomic ,assign) NSInteger steps;
+@property (nonatomic ,assign) NSInteger heartRate;
+
 @end
